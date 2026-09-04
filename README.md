@@ -2,7 +2,7 @@
 
 Step-by-step, role-tailored product brief for ZopNight, built as a single static page.
 
-- `index.html` is self-contained: styles, script and every product screenshot are inlined.
+- `index.html` carries the styles and script; product screenshots live in `img/` and load per step.
 - Query parameters set what the reader sees: `?role=finance|engineering|finops|leadership`, `&depth=plain|detailed`, `&for=Company%20Name`. The hash (`#optimise`) deep-links to a step.
 - No build step. Serve the folder from any static host.
 

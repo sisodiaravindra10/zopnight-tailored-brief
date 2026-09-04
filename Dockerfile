@@ -2,5 +2,6 @@
 FROM nginx:1.27-alpine
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 COPY index.html /usr/share/nginx/html/index.html
+COPY img /usr/share/nginx/html/img
 EXPOSE 8080
 HEALTHCHECK CMD wget -qO- http://127.0.0.1:8080/healthz || exit 1
