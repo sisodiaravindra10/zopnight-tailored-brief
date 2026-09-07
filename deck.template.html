@@ -70,7 +70,13 @@ input{font:inherit}
 .wherenow{display:flex;align-items:center;gap:14px}
 .where{margin-left:auto;display:flex;align-items:center;gap:14px;font-family:var(--mono);font-size:0.71875rem;color:var(--ink-4);letter-spacing:.04em}
 .where b{color:var(--ink);font-weight:500;font-variant-numeric:tabular-nums}
-.depth{border:1px solid var(--line-2);padding:7px 11px;font-family:var(--mono);font-size:0.6875rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);min-height:34px;transition:border-color var(--dur-fast) var(--ease-out),color var(--dur-fast) var(--ease-out)}
+.rolepick{display:flex;align-items:center;gap:9px}
+.rolepick > span{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-4)}
+.rolepick select{appearance:none;background:var(--bg-0);border:1px solid var(--line-b);color:var(--ink-2);font-family:var(--font);font-size:13px;font-weight:500;padding:0 30px 0 11px;min-height:34px;
+  background-image:linear-gradient(45deg,transparent 50%,var(--ink-3) 50%),linear-gradient(135deg,var(--ink-3) 50%,transparent 50%);
+  background-position:calc(100% - 15px) 15px,calc(100% - 11px) 15px;background-size:4px 4px,4px 4px;background-repeat:no-repeat}
+.rolepick select:hover{border-color:var(--ink);color:var(--ink)}
+.depth{border:1px solid var(--line-2);padding:7px 11px;font-family:var(--mono);font-size:0.6875rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);min-height:34px;white-space:nowrap;transition:border-color var(--dur-fast) var(--ease-out),color var(--dur-fast) var(--ease-out)}
 .depth:hover{border-color:var(--ink);color:var(--ink)}
 
 .stage{flex:1;min-height:0;position:relative;overflow:hidden}
@@ -140,24 +146,6 @@ body[data-mode="plain"] .spec, body[data-mode="plain"] .tech{display:none}
 .shot img{width:100%;height:auto;max-height:52vh;object-fit:cover;object-position:top;background:#F5F5F5}
 .shot figcaption{font-family:var(--mono);font-size:0.6875rem;color:var(--ink-4);padding:9px 12px;border-top:1px solid var(--line);letter-spacing:.02em}
 
-/* start */
-.roles{margin-top:26px;display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line-2);border:1px solid var(--line-2)}
-.roles button{background:var(--bg-0);padding:18px 20px 16px;text-align:left;display:grid;gap:5px;transition:background var(--dur-fast) var(--ease-out);min-height:96px;position:relative}
-.roles button:hover{background:var(--bg-2)}
-.roles button b{font-size:1.1875rem;font-weight:600;letter-spacing:-0.02em}
-.roles button span{font-size:0.84375rem;color:var(--ink-4);line-height:1.45}
-.roles button[aria-pressed="true"]{background:var(--bg-2)}
-.roles button[aria-pressed="true"]::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--zop-orange)}
-.roles button[aria-pressed="true"] b{color:var(--zop-orange)}
-.startrow{margin-top:24px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
-.depthpick{margin-left:auto;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
-.depthpick .k{font-family:var(--mono);font-size:0.6875rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-4)}
-.start-side{border:1px solid var(--line-2);background:var(--bg-2);padding:26px}
-.start-side .lab{font-family:var(--mono);font-size:0.6875rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-4);margin-bottom:14px}
-.agenda{display:grid;border-top:1px solid var(--line)}
-.agenda div{display:grid;grid-template-columns:32px 1fr auto;gap:12px;padding:10px 0;border-bottom:1px solid var(--line);font-size:0.90625rem;color:var(--ink-2)}
-.agenda div i{font-family:var(--mono);font-style:normal;font-size:0.6875rem;color:var(--ink-4);padding-top:3px;letter-spacing:.08em}
-.agenda div small{font-family:var(--mono);font-size:0.6875rem;color:var(--ink-4);padding-top:3px}
 
 /* calculator */
 .calc{background:var(--bg-2);border:1px solid var(--line-2);padding:26px}
@@ -301,7 +289,6 @@ input[type=range]::-moz-range-thumb{width:18px;height:18px;background:var(--ink)
   :root{--gutter:18px}
   .rail{display:none}
   .stepbtn{display:flex}
-  .startcta{display:none}
   .cmp-wrap{border:0;overflow:visible}
   .cmp{min-width:0;display:block;font-size:0.875rem}
   .cmp thead{display:none}
@@ -314,23 +301,21 @@ input[type=range]::-moz-range-thumb{width:18px;height:18px;background:var(--ink)
   .cmp td.zn::before{color:var(--ink-2)}
   .cmp td span{padding:0;min-height:40px}
   .cmp-legend .note{font-size:0.75rem}
-  .roles button{padding:14px 16px 13px}
   .proto-inner{gap:8px 14px}
   .link-out{margin-left:0;width:100%}
   .prepared{display:none}
   .brand small{display:none}
   .top-inner{gap:14px}
   .h-big{font-size:clamp(1.875rem,9vw,2.75rem)}
-  .roles{grid-template-columns:1fr}
-  .roles button{min-height:0}
   .calc{padding:18px}
   .result{grid-template-columns:1fr}
   .stats{grid-template-columns:1fr}
   .facts{grid-template-columns:1fr}
   .trusted{margin-left:0}
-  .depthpick{margin-left:0}
   .navbtn span{display:none}
   .hint{display:none}
+  .wherenow{display:none}
+  .rolepick > span{display:none}
   .navbtn{padding:0 14px}
   .bottom-inner{gap:12px}
 }
@@ -403,7 +388,15 @@ input[type=range]::-moz-range-thumb{width:18px;height:18px;background:var(--ink)
     <a class="brand" href="#" id="home"><svg><use href="#mark-zopnight"/></svg>zopnight <small>by zopdev</small></a>
     <span class="prepared" id="preparedNav" hidden>Prepared for <b id="preparedName"></b></span>
     <div class="where">
-      <span class="wherenow" aria-live="polite"><span class="lbl" id="whereTitle">Start</span><b id="whereCount">01 / 11</b></span>
+      <span class="wherenow" aria-live="polite"><span class="lbl" id="whereTitle">What it is</span><b id="whereCount">01 / 10</b></span>
+      <label class="rolepick"><span>Reading as</span>
+        <select id="roleSel">
+          <option value="finance">Finance</option>
+          <option value="engineering">Engineering</option>
+          <option value="finops">FinOps and cloud</option>
+          <option value="leadership">Leadership</option>
+        </select>
+      </label>
       <button type="button" class="depth" id="modeToggle">show detail</button>
     </div>
   </div>
@@ -412,38 +405,7 @@ input[type=range]::-moz-range-thumb{width:18px;height:18px;background:var(--ink)
 <!-- ============ STAGE ============ -->
 <main class="stage" id="stage">
 
-  <section class="slide on" data-s="start" data-title="Start">
-    <div class="slide-inner two">
-      <div>
-        <div class="tag">ZopNight · a five minute read</div>
-        <h1 class="h-big">First, who is reading?</h1>
-        <p class="lead" id="startLead">Your ZopNight contact set this up for finance leaders. Not you? Pick your seat and the rest of the deck adjusts.</p>
-        <div class="roles" id="roles">
-          <button type="button" data-role="finance" aria-pressed="true"><b>Finance</b><span>The bill, the proof, who owns which dollar.</span></button>
-          <button type="button" data-role="engineering" aria-pressed="false"><b>Engineering</b><span>What it can touch, what it never will, how it fits.</span></button>
-          <button type="button" data-role="finops" aria-pressed="false"><b>FinOps and cloud</b><span>Rules, schedules, showback, the daily controls.</span></button>
-          <button type="button" data-role="leadership" aria-pressed="false"><b>Leadership</b><span>What changes by next month, and what it costs.</span></button>
-        </div>
-        <div class="startrow">
-          <button type="button" class="btn btn-primary startcta" id="startBtn">Start <svg><use href="#i-arrow"/></svg></button>
-          <button type="button" class="btn btn-secondary startcta" id="skipBtn">Skip to the next step</button>
-          <div class="depthpick">
-            <span class="k">How deep</span>
-            <div class="seg" id="modeSeg2">
-              <button type="button" data-mode="plain" aria-pressed="true">Plain</button>
-              <button type="button" data-mode="detailed" aria-pressed="false">With the numbers</button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <aside class="start-side">
-        <div class="lab" style="display:flex;justify-content:space-between;gap:12px"><span>What is in the deck</span><span id="agendaMeta">11 steps · about 6 minutes</span></div>
-        <div class="agenda" id="agenda"></div>
-      </aside>
-    </div>
-  </section>
-
-  <section class="slide tint" data-s="pitch" data-title="What it is">
+  <section class="slide tint on" data-s="pitch" data-title="What it is">
     <div class="slide-inner two">
       <div>
         <div class="tag swap" id="heroTag"></div>
@@ -640,7 +602,7 @@ input[type=range]::-moz-range-thumb{width:18px;height:18px;background:var(--ink)
         {n:'Never applies',s:'decision point only',p:'ZopNight decides, your pipeline enforces. It never runs apply.',t:'state scans map declared resources to discovered inventory',shot:'{{S_history}}',cap:'History: every action logged. IaC decisions post to the PR, your pipeline applies'}]}
   };
   var REP_DEFAULT = {{REP_DEFAULT}};
-  var BASE = ['start','pitch','week','proof'], TAIL = ['compare','how','next'];
+  var BASE = ['pitch','week','proof'], TAIL = ['compare','how','next'];
   var state = { role:'finance', mode:'plain', company:'', i:0, order:[], rep:REP_DEFAULT };
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var $ = function(s){ return document.querySelector(s); };
@@ -709,7 +671,6 @@ input[type=range]::-moz-range-thumb{width:18px;height:18px;background:var(--ink)
       var meta = (k==='week' || k==='compare') ? 'interactive' : (CH[k] ? CH[k].f.length+' features' : '');
       return { n:String(i+1).padStart(2,'0'), title:slides[k].dataset.title, meta:meta, i:i };
     });
-    $('#agenda').innerHTML = rows.map(function(r){ return '<div><i>'+r.n+'</i><span>'+r.title+'</span><small>'+r.meta+'</small></div>'; }).join('');
     $('#sheetList').innerHTML = rows.map(function(r){ return '<button type="button" data-i="'+r.i+'"><i>'+r.n+'</i><span>'+r.title+'</span><small>'+r.meta+'</small></button>'; }).join('');
   }
   function go(i, dir){
@@ -733,13 +694,13 @@ input[type=range]::-moz-range-thumb{width:18px;height:18px;background:var(--ink)
     document.body.dataset.role = state.role;
     if (animate){ swapText($('#heroTag'), r.tag); swapText($('#heroH1'), r.h1); swapText($('#heroLead'), r.lead); }
     else { $('#heroTag').innerHTML=r.tag; $('#heroH1').innerHTML=r.h1; $('#heroLead').innerHTML=r.lead; }
-    $('#startLead').textContent = 'Your ZopNight contact set this up for ' + r.name + '. Not you? Pick your seat and the rest of the deck adjusts.';
-    document.querySelectorAll('#roleSeg button, #roles button').forEach(function(b){ b.setAttribute('aria-pressed', String(b.dataset.role===state.role)); });
+    document.querySelectorAll('#roleSeg button').forEach(function(b){ b.setAttribute('aria-pressed', String(b.dataset.role===state.role)); });
+    $('#roleSel').value = state.role;
     updateRoleLines(); buildOrder(); buildRail(); go(state.i, 0);
   }
   function renderMode(){
     document.body.dataset.mode = state.mode;
-    document.querySelectorAll('#modeSeg button, #modeSeg2 button').forEach(function(b){ b.setAttribute('aria-pressed', String(b.dataset.mode===state.mode)); });
+    document.querySelectorAll('#modeSeg button').forEach(function(b){ b.setAttribute('aria-pressed', String(b.dataset.mode===state.mode)); });
     $('#modeToggle').textContent = state.mode==='plain' ? 'show detail' : 'hide detail';
   }
   function renderRep(){ $('#proto').hidden = !state.rep; }
@@ -757,9 +718,8 @@ input[type=range]::-moz-range-thumb{width:18px;height:18px;background:var(--ink)
   function setRole(r){ if(!ROLE[r] || r===state.role) return; state.role = r; renderRole(true); renderLink(); }
   function setMode(m){ state.mode = m; renderMode(); renderLink(); }
   $('#roleSeg').addEventListener('click', function(e){ var b=e.target.closest('button[data-role]'); if(b) setRole(b.dataset.role); });
-  $('#roles').addEventListener('click', function(e){ var b=e.target.closest('button[data-role]'); if(b) setRole(b.dataset.role); });
+  $('#roleSel').addEventListener('change', function(e){ setRole(e.target.value); });
   $('#modeSeg').addEventListener('click', function(e){ var b=e.target.closest('button[data-mode]'); if(b) setMode(b.dataset.mode); });
-  $('#modeSeg2').addEventListener('click', function(e){ var b=e.target.closest('button[data-mode]'); if(b) setMode(b.dataset.mode); });
   $('#modeToggle').addEventListener('click', function(){ setMode(state.mode==='plain'?'detailed':'plain'); });
   $('#company').addEventListener('input', function(e){ state.company = e.target.value; renderCompany(); renderLink(); });
   $('#copyLink').addEventListener('click', function(){
@@ -767,8 +727,6 @@ input[type=range]::-moz-range-thumb{width:18px;height:18px;background:var(--ink)
     var done = function(){ b.textContent='copied'; setTimeout(function(){ b.textContent='copy'; },1400); };
     if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(done,done); else done();
   });
-  $('#startBtn').addEventListener('click', function(){ go(1,1); });
-  $('#skipBtn').addEventListener('click', function(){ go(state.order.length-1,1); });
   $('#prev').addEventListener('click', function(){ go(state.i-1,-1); });
   $('#next').addEventListener('click', function(){ go(state.i+1,1); });
   $('#home').addEventListener('click', function(e){ e.preventDefault(); go(0,-1); });
